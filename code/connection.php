@@ -10,6 +10,12 @@ $user = 'MYSQL_USER';
 //database user password
 $pass = 'MYSQL_PASSWORD';
 
+if (!function_exists('mysqli_init') && !extension_loaded('mysqli')) {
+    echo 'We don\'t have mysqli!!!';
+} else {
+    echo 'Phew we have it!';
+}
+
 // check the MySQL connection status
 $conn = new mysqli($host, $user, $pass);
 if ($conn->connect_error) {
